@@ -1,7 +1,13 @@
+
+html {
+  background-color: #fffcf5;
+}
+
 body {
   font-family: "Galdeano", sans-serif;
   margin: 30px;
   background-color: #fffcf5;
+  word-spacing: 1px;
 }
 
 .content {
@@ -25,13 +31,24 @@ a {
   border-bottom: 1px solid;
   padding-bottom: 30px;
 
-  p {
+  .name {
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .role {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
   }
 
   .contact {
     margin-top: 10px
+  }
+
+  a {
+    margin: 0 5px;
   }
 }
 
@@ -51,10 +68,7 @@ li {
 
 .topic-title {
   font-weight: bold;
-  //text-transform: uppercase;
-  //text-decoration: underline;
   margin-right: 5px;
-  //font-size: 14px;
 }
 
 // consider with left pane
@@ -81,6 +95,7 @@ li {
 
 .right-pane {
   width: 75%;
+  margin-bottom: 10px;
 
   li {
     line-height: 1.3em;
@@ -91,6 +106,11 @@ li {
   ul {
     margin-top: 0;
   }
+}
+
+.web-version, .thanks-notes {
+  margin: 40px;
+  text-align: center;
 }
 
 @media screen
