@@ -1,0 +1,101 @@
+body {
+  font-family: "Galdeano", sans-serif;
+  margin: 30px;
+  background-color: #fffcf5;
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  //font-weight: 100;
+  color: black;
+
+  &:hover {
+    background: #ffe097;
+  }
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid;
+  padding-bottom: 30px;
+
+  p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .contact {
+    margin-top: 10px
+  }
+}
+
+li {
+  margin: 5px 0;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.topic-title {
+  font-weight: bold;
+  //text-transform: uppercase;
+  //text-decoration: underline;
+  margin-right: 5px;
+  //font-size: 14px;
+}
+
+// consider with left pane
+.main-header {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-header {
+  margin-top: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+}
+
+.left-pane, .right-pane  {
+  float: left;
+}
+
+.left-pane {
+  width: 25%;
+}
+
+.right-pane {
+  width: 75%;
+
+  li {
+    line-height: 1.3em;
+  }
+}
+
+.skills, .projects {
+  ul {
+    margin-top: 0;
+  }
+}
+
+@media screen
+{
+  .only-print {
+    display: none;
+  }
+}
