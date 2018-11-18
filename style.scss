@@ -27,9 +27,24 @@ a {
 }
 
 .header {
-  text-align: center;
+  // text-align: center;
   border-bottom: 1px solid;
   padding-bottom: 30px;
+
+  .info {
+    text-align: right;
+  }
+
+  .picture {
+    float: left;
+
+    img {
+      height: 120px;
+      width: 130px;
+      border-radius: 100%;
+      border: 3px solid #ffe097;
+    }
+  }
 
   .name {
     font-size: 20px;
