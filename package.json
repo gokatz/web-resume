@@ -5,10 +5,12 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "test": "node tests/visual-regression-test.js"
   },
   "dependencies": {},
   "devDependencies": {
+    "differencify": "^1.5.2",
     "parcel-bundler": "^1.6.1",
     "sass": "^1.15.1"
   }
