@@ -78,7 +78,7 @@
 
         <div class="left-pane">
           May 2016 - Present
-          <div><small>3 years 9 months</small></div>
+          <div><small id="experience-field">3 years 9 months</small></div>
         </div>
         <div class="right-pane">
           <div>
@@ -393,4 +393,28 @@
       </div>
     </div>
   </body>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", event => {
+      try {
+        let joiningDate = new Date(2016, 4, 2); // 2nd May 2016
+        let today = new Date();
+
+        let diffInMs = today - joiningDate;
+        let coeff = 1000 * 3600 * 24 * 365; // Sec * Minutes * days * year
+        let diffInYear = diffInMs / coeff;
+        let remainingMonths = (diffInMs % coeff) / (1000 * 3600 * 24 * 30); // Sec * Minutes * days * months
+        diffInYear = Math.floor(diffInYear);
+        remainingMonths = Math.floor(remainingMonths);
+
+        document.getElementById(
+          "experience-field"
+        ).innerText = `${diffInYear} Years ${
+          remainingMonths ? `${remainingMonths} Months` : ""
+        }`;
+      } catch (error) {
+        // NoOp
+      }
+    });
+  </script>
 </html>
