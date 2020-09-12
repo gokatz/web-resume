@@ -5,7 +5,7 @@ html {
 
 body {
   font-family: "Galdeano", sans-serif;
-  margin: 30px;
+  margin: 10px 30px;
   background-color: #fffcf5;
   word-spacing: 1px;
 }
@@ -142,6 +142,8 @@ li {
 
 @media screen
 {
+  margin: 30px;
+  
   .only-print {
     display: none;
   }
