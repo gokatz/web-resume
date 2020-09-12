@@ -142,7 +142,10 @@ li {
 
 @media screen
 {
-  margin: 30px;
+  
+  body {
+    margin: 30px;
+  }
   
   .only-print {
     display: none;
