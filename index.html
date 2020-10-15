@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
-      href="https://fonts.googleapis.com/css?family=Galdeano"
+      href="https://fonts.googleapis.com/css2?family=Galdeano&display=swap"
       rel="stylesheet"
     />
-
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.scss" />
   </head>
@@ -75,21 +74,21 @@
             TL;DR,
             <ul>
               <li>
-                Currently, focus primarily on Ember.js to build fintech
-                products.
+                Currently, focus primarily on
+                <b>Ember.js and Web Components</b> to build fintech products.
               </li>
               <li>
-                An eye for performance and delightful user experience.
+                An eye for <b>performance</b> and delightful user experience.
               </li>
               <li>
-                Recently started digging into the world of JSX via Preact and
-                React.
+                Recently started digging into the world of JSX via
+                <b>Preact and React.</b>
               </li>
+              <li>Enjoy building <b>browser extensions.</b></li>
+              <li>Love to engage with the <b>community</b></li>
               <li>
-                Enjoy building browser extensions.
-              </li>
-              <li>
-                Love to engage with the community
+                Has a total professional experiene of
+                <b id="total-exp">4 Years 4 Months</b>
               </li>
             </ul>
           </div>
@@ -430,21 +429,36 @@
   </body>
 
   <script>
+    function calcluateExperience(startDate) {
+      let today = new Date();
+
+      let diffInMs = today - startDate;
+      let coeff = 1000 * 3600 * 24 * 365; // Sec * Minutes * days * year
+      let diffInYear = diffInMs / coeff;
+      let remainingMonths = (diffInMs % coeff) / (1000 * 3600 * 24 * 30); // Sec * Minutes * days * months
+      diffInYear = Math.floor(diffInYear);
+      remainingMonths = Math.floor(remainingMonths);
+
+      return {
+        diffInYear,
+        remainingMonths
+      };
+    }
+
     window.addEventListener("DOMContentLoaded", (event) => {
       try {
-        let joiningDate = new Date(2016, 4, 1); // 1st May 2016
-        let today = new Date();
+        let zohoExp = calcluateExperience(new Date(2016, 4, 1));
 
-        let diffInMs = today - joiningDate;
-        let coeff = 1000 * 3600 * 24 * 365; // Sec * Minutes * days * year
-        let diffInYear = diffInMs / coeff;
-        let remainingMonths = (diffInMs % coeff) / (1000 * 3600 * 24 * 30); // Sec * Minutes * days * months
-        diffInYear = Math.floor(diffInYear);
-        remainingMonths = Math.floor(remainingMonths);
+        let diffInYear = zohoExp.diffInYear;
+        let remainingMonths = zohoExp.remainingMonths;
 
         document.getElementById(
           "experience-field"
         ).innerText = `${diffInYear} Years ${
+          remainingMonths ? `${remainingMonths} Months` : ""
+        }`;
+
+        document.getElementById("total-exp").innerText = `${diffInYear} Years ${
           remainingMonths ? `${remainingMonths} Months` : ""
         }`;
       } catch (error) {
