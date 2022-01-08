@@ -24,7 +24,7 @@
         </div>
         <div>Salem, Tamilnadu, India - 637101</div>
 
-        <div class="contact">
+        <div class="contact" id="contact">
           <a href="tel:+918248743838">+91 - 8248743838</a> |
           <a href="mailto:gokulkathirvel@live.com">gokulkathirvel@live.com</a> |
 
@@ -71,20 +71,24 @@
           which backs him. Believes in <b>"Solve Together!"</b>
 
           <div class="tldr">
-            TL;DR,
+            <b>TL;DR:</b>
             <ul>
               <li>
                 Currently, focusing primarily on
-                <b>React.js, Ember.js and Web Components</b> to build fintech products.
+                <b>React.js, React Native, GraphQL</b> to build Fintech and
+                Crypto products.
               </li>
               <li>
                 An eye for <b>performance</b> and delightful user experience.
               </li>
               <li>Enjoy building <b>browser extensions.</b></li>
-              <li>Love to <b>teach</b> fellow developers and engage with the <b>community</b></li>
+              <li>
+                Love to <b>teach fellow developers</b> and engage with the
+                <b>community</b>
+              </li>
               <li>
                 Has a total professional experiene of
-                <b id="total-exp">4 Years 4 Months</b>
+                <b id="total-exp">5 Years 8 Months</b>
               </li>
             </ul>
           </div>
@@ -95,21 +99,39 @@
         <div class="main-header">Employment History</div>
 
         <div class="left-pane">
-          May 2016 - Present
-          <div><small id="experience-field">4 Years 4 Months</small></div>
+          October 2021 - Present
+          <div><small id="experience-field">3 Months</small></div>
         </div>
         <div class="right-pane">
           <div>
-            <b class="emp"> Member Technical Staff</b>, Zoho Corporations,
-            Chennai.
+            <b class="emp"> Software Engineer</b>,
+            <div class="company-name"><b>Coinbase Inc.</b> - Chennai.</div>
           </div>
           <ul>
             <li>
-              Working on a couple of popular
+              Helping the world's leading <b>Crypto exchange platform</b> to
+              develop and grow top notch new initiatives, as a part of the
+              Growth team.
+            </li>
+          </ul>
+        </div>
+
+        <div class="left-pane">
+          May 2016 - October 2021
+          <div><small>5 Years 5 Months</small></div>
+        </div>
+        <div class="right-pane">
+          <div>
+            <b class="emp"> Member Technical Staff</b>,
+            <div class="company-name"><b>Zoho Corporations</b> - Chennai.</div>
+          </div>
+          <ul>
+            <li>
+              Worked on a couple of popular
               <b>Cloud-based business operating software.</b>
             </li>
             <li>
-              Maintaining the internal front-end framework wrapper built over
+              Maintained the internal front-end framework wrapper built over
               Ember.js and Preact.js
             </li>
             <li>
@@ -117,22 +139,22 @@
               suite of fintech application.
             </li>
             <!-- <li>
-              Developed and maintaining the front-end codebase written on
-              Ember.js for an internal automated tool for entire CI/CD process
-              for many production level product.
-            </li> -->
+                Developed and maintaining the front-end codebase written on
+                Ember.js for an internal automated tool for entire CI/CD process
+                for many production level product.
+              </li> -->
             <!-- <li>
-              Built a <b>Vue web client</b> for an internal server performance
-              monitor tool.
-            </li> -->
+                Built a <b>Vue web client</b> for an internal server performance
+                monitor tool.
+              </li> -->
             <li>
               Developed a <b>few browser extensions</b> to improve the developer
               experience in the internal CI/CD process.
             </li>
             <li>
-              Building an <b>effective performance monitor tool</b> for the
-              front-end codebase. Exclusively for Ember.js (but, not limited
-              to).
+              Invested in building an
+              <b>effective performance monitor tool</b> for the front-end
+              codebase. Exclusively for Ember.js (but, not limited to).
             </li>
           </ul>
         </div>
@@ -152,10 +174,11 @@
               <span class="topic-title"> Js Frameworks: </span> Building and
               maintaining production level apps in the following Frameworks
               <ul>
-                <li>Ember.js</li>
                 <li>
-                  React <small class="proficiency beginner">Intermediate</small>
+                  React
                 </li>
+                <li>Ember.js</li>
+
                 <li>
                   Vue.js (and VueX)
                   <small class="proficiency intermediate">Intermediate</small>
@@ -175,9 +198,23 @@
               </ul>
             </li>
             <li>
+              <span class="topic-title">
+                Mobile Development:
+              </span>
+              <ul>
+                <li>
+                  React Native
+                  <small class="proficiency beginner">Beginner</small>
+                </li>
+              </ul>
+            </li>
+            <li>
               <span class="topic-title"> Testing Libraries: </span>
               <ul>
                 <li>QUnit - Ember-QUnit: Acceptance, Unit, Integration</li>
+                <li>
+                  Jest <small class="proficiency beginner">Beginner</small>
+                </li>
                 <li>
                   Cypress <small class="proficiency beginner">Beginner</small>
                 </li>
@@ -217,8 +254,7 @@
               <span class="topic-title"> CI/CD: </span>
               <ul>
                 <li>
-                  Maintaining the CI-CD cycle for few customer-facing and
-                  internal products.
+                  Maintaining the CI-CD cycle for few pet products
                 </li>
                 <li>
                   Wrote a custom deployment script for
@@ -419,47 +455,69 @@
       </div>
 
       <div class="web-version only-print">
-        <a href="http://www.profile.gokatz.me/">Web version of this resume</a>
+        <a href="https://www.profile.gokatz.me/">Web version of this resume</a>
       </div>
     </div>
   </body>
 
   <script>
-    function calcluateExperience(startDate) {
+    function calcluateExperience(startDate, endDate) {
       let today = new Date();
+      endDate = endDate || today;
 
-      let diffInMs = today - startDate;
+      let diffInMs = endDate - startDate;
       let coeff = 1000 * 3600 * 24 * 365; // Sec * Minutes * days * year
       let diffInYear = diffInMs / coeff;
       let remainingMonths = (diffInMs % coeff) / (1000 * 3600 * 24 * 30); // Sec * Minutes * days * months
       diffInYear = Math.floor(diffInYear);
       remainingMonths = Math.floor(remainingMonths);
 
-      return {
+      let exp = {
         diffInYear,
         remainingMonths
       };
+
+      return {
+        ...exp,
+        formattedExp: formatExp(exp)
+      };
     }
 
-    window.addEventListener("DOMContentLoaded", (event) => {
+    function formatExp(exp) {
+      let diffInYear = exp.diffInYear;
+      let remainingMonths = exp.remainingMonths;
+
+      return `${diffInYear ? `${diffInYear} Years` : ""} ${
+        remainingMonths ? `${remainingMonths} Months` : ""
+      }`;
+    }
+
+    function handleLoad(event) {
       try {
-        let zohoExp = calcluateExperience(new Date(2016, 4, 1));
-
-        let diffInYear = zohoExp.diffInYear;
-        let remainingMonths = zohoExp.remainingMonths;
-
-        document.getElementById(
-          "experience-field"
-        ).innerText = `${diffInYear} Years ${
-          remainingMonths ? `${remainingMonths} Months` : ""
-        }`;
-
-        document.getElementById("total-exp").innerText = `${diffInYear} Years ${
-          remainingMonths ? `${remainingMonths} Months` : ""
-        }`;
+        calculateTotalExperience();
+        calculateCBExperience();
       } catch (error) {
-        // NoOp
+        //NoOp
       }
-    });
+    }
+
+    function calculateTotalExperience() {
+      let totalExpSpace = document.getElementById("total-exp");
+      if (totalExpSpace) {
+        let exp = calcluateExperience(new Date(2016, 4, 1));
+        document.getElementById("total-exp").innerText = exp.formattedExp;
+      }
+    }
+
+    function calculateCBExperience() {
+      let expField = document.getElementById("experience-field");
+      if (expField) {
+        let exp = calcluateExperience(new Date(2021, 9, 1));
+        document.getElementById("experience-field").innerText =
+          exp.formattedExp;
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", handleLoad);
   </script>
 </html>
