@@ -71,7 +71,7 @@
           which backs him. Believes in <b>"Solve Together!"</b>
 
           <div class="tldr">
-            <b>TL;DR,</b>
+            <b>TL;DR:</b>
             <ul>
               <li>
                 Currently, focusing primarily on
@@ -100,11 +100,12 @@
 
         <div class="left-pane">
           October 2021 - Present
-          <div><small id="experience-field">5 Years 5 Months</small></div>
+          <div><small id="experience-field">3 Months</small></div>
         </div>
         <div class="right-pane">
           <div>
-            <b class="emp"> Software Engineer</b>, Coinbase Inc., Remote.
+            <b class="emp"> Software Engineer</b>,
+            <div class="company-name"><b>Coinbase Inc.</b> - Chennai.</div>
           </div>
           <ul>
             <li>
@@ -121,8 +122,8 @@
         </div>
         <div class="right-pane">
           <div>
-            <b class="emp"> Member Technical Staff</b>, Zoho Corporations,
-            Chennai.
+            <b class="emp"> Member Technical Staff</b>,
+            <div class="company-name"><b>Zoho Corporations</b> - Chennai.</div>
           </div>
           <ul>
             <li>
@@ -492,8 +493,12 @@
     }
 
     function handleLoad(event) {
-      calculateTotalExperience();
-      calculateCBExperience();
+      try {
+        calculateTotalExperience();
+        calculateCBExperience();
+      } catch (error) {
+        //NoOp
+      }
     }
 
     function calculateTotalExperience() {

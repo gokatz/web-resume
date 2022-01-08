@@ -103,6 +103,10 @@ li {
   }
 }
 
+.company-name {
+  margin-top: 5px;
+}
+
 .skills, .projects {
   ul {
     margin-top: 0;
@@ -132,9 +136,9 @@ li {
 .tldr {
   margin-top: 15px;
 
-  ul {
-    padding-left: 15px;
-  }
+  // ul {
+  //   padding-left: 15px;
+  // }
 
   li {
     margin: 3px !important;
