@@ -90,7 +90,7 @@
               </li>
               <li>
                 Has a total professional experience of
-                <b id="total-exp">5 Years 8 Months</b>
+                <b class="total-exp">6 Years 11 Months</b>
               </li>
             </ul>
           </div>
@@ -98,7 +98,14 @@
       </div>
 
       <div class="employment section-header clearfix">
-        <div class="main-header">Employment History</div>
+        <div class="main-header">
+          Employment History
+          <div style="margin-bottom: 20px;">
+            <small class="total-exp-container">
+              (Total of <span class="total-exp">6 Years 11 Months</span>)
+            </small>
+          </div>
+        </div>
 
         <div class="left-pane">
           October 2021 - Present
@@ -513,11 +520,14 @@
     }
 
     function calculateTotalExperience() {
-      let totalExpSpace = document.getElementById("total-exp");
-      if (totalExpSpace) {
-        let exp = calcluateExperience(new Date(2016, 4, 1));
-        document.getElementById("total-exp").innerText = exp.formattedExp;
-      }
+      let totalExpSpaces = document.querySelectorAll(".total-exp");
+      
+      totalExpSpaces.forEach((totalExpSpace) => {
+        if (totalExpSpace) {
+          let exp = calcluateExperience(new Date(2016, 4, 1));
+          totalExpSpace.innerText = exp.formattedExp;
+        }
+      })
     }
 
     function calculateCBExperience() {

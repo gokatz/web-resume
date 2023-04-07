@@ -1,4 +1,3 @@
-
 html {
   background-color: #fffcf5;
   color: #1c223e;
@@ -45,7 +44,7 @@ a {
   }
 
   .contact {
-    margin-top: 10px
+    margin-top: 10px;
   }
 
   a {
@@ -80,13 +79,18 @@ li {
   margin-bottom: 10px;
 }
 
+.total-exp-container {
+  font-size: 75%;
+}
+
 .section-header {
   margin-top: 15px;
   padding-bottom: 10px;
   border-bottom: 1px solid;
 }
 
-.left-pane, .right-pane  {
+.left-pane,
+.right-pane {
   float: left;
 }
 
@@ -107,13 +111,15 @@ li {
   margin-top: 5px;
 }
 
-.skills, .projects {
+.skills,
+.projects {
   ul {
     margin-top: 0;
   }
 }
 
-.web-version, .thanks-notes {
+.web-version,
+.thanks-notes {
   margin: 40px;
   text-align: center;
 }
@@ -145,23 +151,22 @@ li {
   }
 }
 
-@media screen
-{
-  
+@media screen {
   body {
     margin: 30px;
   }
-  
+
   .only-print {
     display: none;
   }
 }
 
-// @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+// @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
 
 // }
 
-@media (max-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+@media (max-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
   .left-pane {
     width: 100%;
     margin-bottom: 10px;
@@ -172,6 +177,11 @@ li {
     font-size: 16px;
     text-decoration: underline;
     margin-bottom: 1.2em;
+
+    .total-exp-container {
+      display: inline-block;
+      text-decoration: none;
+    }
   }
 
   .right-pane {
@@ -189,6 +199,6 @@ li {
 
 .projects {
   li {
-    margin-bottom: 16px;  
+    margin-bottom: 16px;
   }
 }
