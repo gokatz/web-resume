@@ -1,15 +1,72 @@
+// Fonts
+
+.fira-sans-regular {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fira-sans-semibold {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.fira-sans-bold {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+// Fonts end
+
+// Dev utils
+
+.ruler {
+  display: none;
+  position: absolute;
+  top: 0;
+  border: 1px solid red;
+  width: 10px;
+  height: 1230px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 11px;
+  margin: 0 -15px;
+}
+
+// Dev utils end
+
+
 html {
   background-color: #fff;
   color: #1c223e;
 }
 
 body {
-  font-family: "Galdeano", sans-serif;
-  // font-family: "Josefin Sans", sans-serif;
-    // font-family: "Public Sans", sans-serif;
-    margin: 10px 30px;
-  // background-color: #fffcf5;
+  @extend .fira-sans-regular;
+  font-style: normal;
+  margin: 10px 30px;
   word-spacing: 1px;
+}
+
+// Distinguish for print and web
+// Only for printing
+body {
+  font-size: 70%;
+}
+
+// Only for Web rendering
+@media screen {
+  body {
+    font-size: 14.5px;
+  }
+}
+// Distinguish for print and web
+
+
+b {
+  @extend .fira-sans-semibold;
 }
 
 .content {
@@ -91,9 +148,13 @@ li {
   border-bottom: 1px solid;
 }
 
+.section-flex-container {
+  display: flex;
+}
+
 .left-pane,
 .right-pane {
-  float: left;
+  // float: left;
 }
 
 .left-pane {
@@ -169,6 +230,10 @@ li {
 
 @media (max-width: 481px) {
   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .section-flex-container {
+    flex-direction: column;
+  }
+  
   .left-pane {
     width: 100%;
     margin-bottom: 10px;
