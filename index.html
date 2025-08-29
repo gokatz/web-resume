@@ -303,7 +303,7 @@
 </body>
 
 <script>
-  function calcluateExperience(startDate, endDate) {
+  function calculateExperience(startDate, endDate) {
     let today = new Date();
     endDate = endDate || today;
 
@@ -346,7 +346,7 @@
     let totalExpSpaces = document.querySelectorAll(".total-exp");
 
     let summaryTotalExpField = document.getElementById("total-exp-summary");
-    let exp = calcluateExperience(new Date(2016, 4, 1));
+    let exp = calculateExperience(new Date(2016, 4, 1));
 
     totalExpSpaces.forEach((totalExpSpace) => {
       if (totalExpSpace) {
@@ -360,7 +360,7 @@
   function calculateCBExperience() {
     let expField = document.getElementById("experience-field");
     if (expField) {
-      let exp = calcluateExperience(new Date(2021, 9, 1));
+      let exp = calculateExperience(new Date(2021, 9, 1));
       document.getElementById("experience-field").innerText =
         exp.formattedExp;
     }
