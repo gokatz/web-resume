@@ -52,7 +52,8 @@
         <div class="right-pane">
           <ul>
             <li>
-              Senior Software Engineer with <b><span class="total-exp-summary">9+ years</span> of expertise in full-stack engineering, performance
+              Senior Software Engineer with <b><span id="total-exp-summary">9+ years</span> of expertise in
+                full-stack engineering, performance
                 optimization, and scalable product development</b> across FinTech, Web3, and SaaS domains.
             </li>
             <li>
@@ -76,7 +77,7 @@
         Professional Experience
         <div style="margin-bottom: 20px;">
           <small class="total-exp-container">
-            (Total of <span class="total-exp">6 Years 11 Months</span>)
+            (Total of <span class="total-exp">9 Years 6 Months</span>)
           </small>
         </div>
       </div>
@@ -84,7 +85,7 @@
       <div class="section-flex-container">
         <div class="left-pane">
           October 2021 - Present
-          <div><small id="experience-field">3 Years 11 Months</small></div>
+          <div><small id="experience-field">4 Years 1 Month</small></div>
         </div>
         <div class="right-pane">
           <div>
@@ -115,7 +116,8 @@
           </ul>
           <b>Key Achievements</b>
           <ul>
-            <li>Built and maintained the Golang-based microservices powering the internationalization platform focused on content
+            <li>Built and maintained the Golang-based microservices powering the internationalization platform focused
+              on content
               translation across <b>100+ services</b>.</li>
             <li>Designed the internationalization workflow using <b>GitHub Actions CI/CD</b> adopted by <b>50+
                 repositories</b>, providing <b>centralized controls</b> and process automation.</li>
@@ -162,7 +164,8 @@
           <ul>
             <li>Delivered the <b>Zoho Payment SDK</b>, adopted globally using <b>web component architecture</b>,
               enabling seamless card transactions across multiple regions.</li>
-            <li>Built internal <b>testing platform</b> from the ground up, supporting <b>600+ developers</b> organization-wide.</li>
+            <li>Built internal <b>testing platform</b> from the ground up, supporting <b>600+ developers</b>
+              organization-wide.</li>
             </li>
             <li>Improved <b>app performance by 45%</b> through key <b>Web Vitals</b> optimizations in <b>Ember</b> and
               <b>React</b>.
@@ -303,20 +306,27 @@
 </body>
 
 <script>
-  function calculateExperience(startDate, endDate) {
-    let today = new Date();
-    endDate = endDate || today;
 
-    let diffInMs = endDate - startDate;
-    let coeff = 1000 * 3600 * 24 * 365; // Sec * Minutes * days * year
-    let diffInYear = diffInMs / coeff;
-    let remainingMonths = (diffInMs % coeff) / (1000 * 3600 * 24 * 30); // Sec * Minutes * days * months
-    diffInYear = Math.floor(diffInYear);
-    remainingMonths = Math.floor(remainingMonths);
+  function calculateExperience(startDate, endDate) {
+    startDate = new Date(startDate);
+    endDate = endDate ? new Date(endDate) : new Date();
+
+    var years = endDate.getFullYear() - startDate.getFullYear();
+    var months = endDate.getMonth() - startDate.getMonth();
+
+    // If the end day is less than start day → incomplete month
+    if (endDate.getDate() < startDate.getDate()) {
+      months--;
+    }
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
 
     let exp = {
-      diffInYear,
-      remainingMonths
+      diffInYear: years,
+      remainingMonths: months
     };
 
     return {
@@ -325,12 +335,14 @@
     };
   }
 
+
   function formatExp(exp) {
     let diffInYear = exp.diffInYear;
     let remainingMonths = exp.remainingMonths;
 
-    return `${diffInYear ? `${diffInYear} Years` : ""} ${remainingMonths ? `${remainingMonths} Months` : ""
-      }`;
+    let formattedYears = diffInYear ? (diffInYear > 1 ? `${diffInYear} Years` : `${diffInYear} Year`) : "" ;
+    let formattedMonths = remainingMonths ? (remainingMonths > 1 ? `${remainingMonths} Months` : `${remainingMonths} Month`) : "" ;
+    return `${formattedYears} ${formattedMonths}`;
   }
 
   function handleLoad(event) {
