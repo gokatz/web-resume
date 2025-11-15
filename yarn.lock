@@ -1789,6 +1789,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "gokatz-web-resume@workspace:."
   dependencies:
+    "@parcel/core": "npm:2.16.1"
     "@parcel/transformer-sass": "npm:2.16.1"
     parcel: "npm:^2.16.1"
   languageName: unknown
