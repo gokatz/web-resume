@@ -84,8 +84,24 @@
 
       <div class="section-flex-container">
         <div class="left-pane">
-          October 2021 - Present
-          <div><small id="experience-field">4 Years 1 Month</small></div>
+          March 2026 - Present
+          <div><small id="stripe-experience">7 Months</small></div>
+        </div>
+        <div class="right-pane">
+          <div>
+            <b class="emp"> Senior Software Engineer</b>,
+            <div class="company-name"><b>Stripe (via Clerky)</b> - Chennai (Remote).</div>
+          </div>
+          <ul>
+            <li>Joined Clerky in March 2026. Moved to Stripe when Stripe acquired Clerky on 5 October 2026.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-flex-container">
+        <div class="left-pane">
+          October 2021 - March 2026
+          <div><small id="experience-field">4 Years 5 Months</small></div>
         </div>
         <div class="right-pane">
           <div>
@@ -348,6 +364,7 @@
   function handleLoad(event) {
     try {
       calculateTotalExperience();
+      calculateStripeExperience();
       calculateCBExperience();
     } catch (error) {
       //NoOp
@@ -369,12 +386,20 @@
     summaryTotalExpField.innerText = `${exp.diffInYear}+ years`;
   }
 
+  function calculateStripeExperience() {
+    let expField = document.getElementById("stripe-experience");
+    if (expField) {
+      // Joined Clerky on 23 March 2026; employment continued at Stripe.
+      let exp = calculateExperience(new Date(2026, 2, 23));
+      expField.innerText = exp.formattedExp;
+    }
+  }
+
   function calculateCBExperience() {
     let expField = document.getElementById("experience-field");
     if (expField) {
-      let exp = calculateExperience(new Date(2021, 9, 1));
-      document.getElementById("experience-field").innerText =
-        exp.formattedExp;
+      let exp = calculateExperience(new Date(2021, 9, 1), new Date(2026, 2, 23));
+      expField.innerText = exp.formattedExp;
     }
   }
 
